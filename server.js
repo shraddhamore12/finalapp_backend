@@ -1,5 +1,7 @@
 const express=require("express")
 const bodyParser = require("body-parser")
+
+const productRouter=require("./product")
 //var cat=require("./category");
 
 const app=express()
@@ -11,7 +13,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(bodyParser.json())
-
+app.use(productRouter)
 app.get('/',(req,res)=>{
     res.send(`<h1 style="color:red">Welcome to final app</h1>`)
 })
